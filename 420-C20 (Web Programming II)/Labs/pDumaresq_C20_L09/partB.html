@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Part B</title>
+</head>
+<body>
+
+	<h1>welcome to partB, we have <em>FREE cookies!!!</em></h1>
+	<h2>Number of <em>cookies: &nbsp;
+		<section id="cookieCounter"></section>
+		<section id="lastVisited"></section></em>
+	</h2>
+
+<script>
+
+var $ = function(id) { return document.getElementById(id) };
+window.onload = checkCookie;
+
+var checkCookie  = new function()  {
+	var timesVisited = 0;
+	var  previousVisit = Date();
+	
+    if (/(^|;)\s*counter=/.test(document.cookie) != true) {
+       
+	   document.cookie = "counter=" + encodeURIComponent(timesVisited);
+       document.cookie = "lastVisit=" + encodeURIComponent(previousVisit);
+	   
+	}
+    else {
+	
+    	timesVisited = document.cookie = "cookies = " + encodeURIComponent(timesVisited);
+		previousVisit = document.cookie = "lastVisit=" + encodeURIComponent(previousVisit);
+    
+		document.getElementById("cookieCounter").textContent = timesVisited;
+		document.getElementById("lastVisited").textContent = previousVisit.getYear;
+
+	}
+}
+</script>
+</body>
+</html>

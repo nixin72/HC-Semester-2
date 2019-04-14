@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Part A</title>
+</head>
+
+<body>
+<h1>Online banking</h1>
+<form method="get" action="#">
+
+	<label>First Name:&nbsp; <input type="text" name="fName" id="fName" /> </label><br />
+	<label>Last Name:&nbsp; <input type="text" name="lName" id="lName" /></label><br />
+	<label>UserName:&nbsp; <input type="text" name="uName" id="uName" /></label><br />
+	<label>Password:&nbsp; <input type="password" name="password" id="password" /></label><br />
+	<br />
+	<input type="button" value="Submit" id="blah" />
+
+</form>
+	
+<script>
+var $ = function(id) { return document.getElementById(id) };
+
+var registerForm = function() {
+	var myDate = new Date();
+	var nextYear = myDate.setFullYear(myDate.getFullYear () + 1); 
+	myDate.toUTCString(); 
+	
+	var fName = $("fName").value;
+	var lName = $("lName").value;
+	var uName = $("uName").value;
+	var password = $("password").value;
+
+	document.cookie = "firstName=" + encodeURIComponent(fName) + "; expires=" + myDate;
+	document.cookie = "lastName=" + encodeURIComponent(lName) + "; expires=" + myDate;
+	document.cookie = "userName=" + encodeURIComponent(uName) + "; expires=" + myDate;
+	document.cookie = "password=" + encodeURIComponent(password) + "; expires=" + myDate;
+}
+
+$("blah").addEventListener('click', registerForm, false);
+</script>	
+
+</body>
+</html>

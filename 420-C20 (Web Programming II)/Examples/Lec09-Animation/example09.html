@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<title>Double movement</title>
+<style type="text/css">
+	img {
+		position: relative;
+	}
+</style></head>
+<body>
+<p><img src="./images/oldBicycle/oldBicycle0.gif" alt="Image of a bike." height="151" width="135"  id="imgBike" /></p>
+
+<script>
+
+var oldBicycle = new Array(4);
+var curBike = 0;
+//get the width of the browser window
+var screenWidth = window.innerWidth;
+//set the starting position for the animation
+var baseLeft = screenWidth + 140;
+//set the starting positions
+var leftPosition = baseLeft;
+
+var pedal = function() {
+     if (curBike == 3)
+           curBike = 0;
+     else
+           ++curBike;
+
+	 document.getElementById("imgBike").src = oldBicycle[curBike].src;
+}
+
+var move = function() {
+	var imageLoc = document.getElementById("imgBike");
+	imageLoc.style.left = leftPosition + "px";
+	leftPosition -= 25;
+	if  (leftPosition < -140) {
+		leftPosition = baseLeft;
+	}
+}
+
+function doSetUp() {
+	//first set up the animated of the image
+	for (var imagesLoaded=0; imagesLoaded < oldBicycle.length; ++imagesLoaded) {
+		oldBicycle[imagesLoaded] = new Image();
+		oldBicycle[imagesLoaded].src = "./images/oldBicycle/oldBicycle" + imagesLoaded + ".gif";
+	}
+	
+	//eliminate the horizontal scroll bar
+	document.documentElement.style.overflowX = 'hidden';
+	setInterval("pedal()", 150);
+	setInterval("move()", 150);
+}
+
+addEventListener('load', doSetUp, false);
+
+</script>
+
+
+</body>
+</html>

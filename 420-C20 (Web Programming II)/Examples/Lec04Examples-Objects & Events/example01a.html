@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+  <head>
+    <title>Objects</title>
+  </head>
+
+<body>
+
+  <h2>Objects with literal notation</h2>
+
+  <script>
+
+	var hotel = new Array();
+	
+	hotel[0] = {
+		name: "Westin",
+		rooms: 150,
+		booked: 53,
+		checkAvailability: function() {
+			return this.rooms - this.booked;
+		}
+	}
+	
+	hotel[1] = {
+		name: "NoVoTel",
+		rooms: 200,
+		booked: 23,
+		checkAvailability: function() {
+			return this.rooms - this.booked;
+		}
+	}
+	
+
+	console.log(hotel[0]);
+	console.log(hotel[1]);
+	console.log(hotel[0].rooms);
+	console.log(hotel[0].checkAvailability());
+	console.log(hotel[1]['rooms']);
+	
+	//hotel.rooms === hotel['rooms'];
+	console.log(hotel[1].booked);
+	var myVar = 'booked';
+	console.log(hotel[1][myVar]);
+
+	hotel[0].name = 'Chateau';
+	console.log(hotel[0].name);
+	console.log(hotel[0]);
+	
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+  <head>
+    <title>Objects</title>
+  </head>
+
+<body>
+
+  <h2>Objects with generic notation</h2>
+
+  <script>
+
+	function Hotel(_name, _rooms, _booked) {
+		this.name = _name;
+		this.rooms = _rooms;
+		this.booked = _booked;
+		this.checkAvailability = function() {
+			return this.rooms - this.booked;
+		};
+		this.bookRoom = function(numRooms) {
+			if (numRooms > this.checkAvailability()) {
+				return false;
+			} else {
+				this.booked += numRooms;
+				return true;
+			}
+		}
+	}
+
+	var hotel1 = new Hotel('Westin', 150, 53);
+	var hotel2 = new Hotel('Chateau', 225, 223);
+	console.log(hotel1);
+	console.log(hotel1.rooms);
+	console.log(hotel1.checkAvailability());
+
+	console.log(hotel2);
+	console.log(hotel2.name);
+	
+	var roomsToBook = 5;
+	console.log("Booking rooms at " + hotel1.name);
+	if (hotel1.bookRoom(5)) {
+		console.log(roomsToBook + " rooms booked for a total booked of " + hotel1.booked);
+		console.log(hotel1.checkAvailability() + " rooms remaining");
+	} else {
+		console.log("Rooms not booked. Only " + hotel1.checkAvailability() + " rooms available");
+	}
+	console.log("Booking rooms at " + hotel2.name);
+	if (hotel2.bookRoom(5)) {
+		console.log(roomsToBook + " rooms booked for a total booked of " + hotel2.booked);
+		console.log(hotel2.checkAvailability() + " rooms remaining");
+	} else {
+		console.log("Rooms not booked. Only " + hotel2.checkAvailability() + " rooms available");
+	}
+</script>
+
+</body>
+
+</html>

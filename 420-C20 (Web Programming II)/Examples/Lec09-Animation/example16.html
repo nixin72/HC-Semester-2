@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Canvas Test</title>
+  </head>
+<body>
+  <section>
+    <div>
+    <canvas id="myCanvas" width="600" height="200">
+	<!-- OPTION 1: leave a message here if browser doesn't support canvas -->
+    <p>Your browser doesn’t currently support the Canvas. 
+    Please check caniuse.com/#feat=canvas for information on 
+    browser support for canvas.</p>
+
+	<!-- OPTION 2: put fallback content (text, image, Flash, etc.) 
+                 if the browser doesn't support canvas -->
+	</canvas>
+    </div>
+<script>
+var context;
+var x = 200;
+var y = 150;
+var dx = 2;
+var dy = 4;
+const WIDTH = document.getElementById("myCanvas").width;
+const HEIGHT = document.getElementById("myCanvas").height;
+
+var circle = function(x,y,r) {
+  context.beginPath();
+  context.arc(x, y, r, 0, 2 * Math.PI, false);
+  //context.closePath();
+  context.fill();
+}
+
+var rect = function(x,y,w,h) {
+  //context.beginPath();
+  context.rect(x,y,w,h);
+  //context.closePath();
+  context.fill();
+}
+
+var clear = function () {
+  context.clearRect(0, 0, WIDTH, HEIGHT);
+}
+
+var setUp = function() {
+  var theCanvas = document.getElementById("myCanvas");
+  context = theCanvas.getContext("2d");
+  setInterval('draw()', 10);
+}
+
+
+var draw = function () {
+  clear();
+  context.fillStyle = "SeaGreen";
+  rect(0,0,WIDTH,HEIGHT);
+  context.fillStyle = "SeaShell";
+  circle(x, y, 10);
+
+  if (x + dx > WIDTH || x + dx < 0)
+    dx = -dx;
+  if (y + dy > HEIGHT || y + dy < 0)
+    dy = -dy;
+
+  x += dx;
+  y += dy;
+}
+
+addEventListener('load',setUp,false);
+</script>
+  </section>
+</body>
+</html>

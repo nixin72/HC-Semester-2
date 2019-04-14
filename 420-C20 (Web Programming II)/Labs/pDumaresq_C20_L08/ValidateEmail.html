@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<title>Part A</title>
+	
+</head>
+
+<body>
+
+
+	<input type="text" name="date" id="date" />
+	<button name="submitNumber" id="submitNumber" value="submit">submit</button>
+
+
+<div id="displayValidity">
+</div>
+
+<script>
+
+var checkDate = function() {
+
+	console.log("The function is getting run on click");
+	
+	var input = document.getElementById("date").value;
+		
+	var checkFormat = /^(?:(\d{2})|(\d{4}))\/\d\d?\/\d\d?$/;
+	var checkDate = /^(\d{2}|(19|20)\d{2})\/(?:((1|3|5|7|8|10|12)\/(?:((0|1|2)?[1-9])|(30|31)))|((4|6|9|11)\/(?:((0|1|2)?[1-9])|30))|((2)\/(?:((0|1)?[1-9])|(2[1-8]))))$/; 
+
+	var isFormatValid = checkFormat.test(input);
+	var isDateValid = checkDate.test(input);
+	
+	if (isFormatValid == true && isDateValid == true) {
+		document.getElementById("displayValidity").textContent = "The date and format are valid"
+	}
+	if (isFormatValid == true && isDateValid == false) {
+		document.getElementById("displayValidity").textContent = "The date is invalid and the format is valid"
+	}
+	if (isFormatValid == false && isDateValid == true) {
+		document.getElementById("displayValidity").textContent = "The date is valid and the format is invalid"
+	}
+	
+}
+
+document.getElementById("submitNumber").addEventListener('click', checkDate, false);
+
+</script>
+
+</body>
+</html>

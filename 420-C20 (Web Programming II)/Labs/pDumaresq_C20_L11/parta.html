@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Part A</title>
+  </head>
+<body>
+
+<canvas id="myCanvas" width="400" height="400">
+    <p>Your browser doesn’t currently support the Canvas. 
+    Please check caniuse.com/#feat=canvas for information on 
+    browser support for canvas.</p>
+</canvas>
+
+<script>
+	window.onload = setUp;
+	function setUp() {
+		myCanvas = document.getElementById("myCanvas");
+		ctx = myCanvas.getContext("2d");
+		ctx.translate(100,100);
+		
+		drawStem();
+		setInterval(drawFlower, 100);
+	}
+	
+	var randomColour = function() {
+		return Math.floor(Math.random()*16777215).toString(16);
+	}
+	
+	function drawStem() {
+		ctx.beginPath();
+		ctx.moveTo(0,0);
+		ctx.bezierCurveTo(0,0,25,100,0,150);
+		ctx.strokeStyle = "DarkOliveGreen";
+		ctx.stroke();
+	}
+	
+	function drawFlower(){
+		var current = 0;
+		while (current <= ((Math.PI)*2)) {
+			ctx.rotate(Math.PI/12);
+			ctx.beginPath();
+			ctx.moveTo(0,0);
+			ctx.bezierCurveTo(75, -15, 75, 15, 0, 0);
+			ctx.fillStyle = "#" + randomColour();
+			ctx.strokeStyle = "DarkMagenta";
+			ctx.lineWidth = 1;
+			ctx.fill();
+			ctx.stroke();
+			current += (Math.PI/12);
+		}
+	}
+
+
+</script>
+
+
+</body>
+</html>

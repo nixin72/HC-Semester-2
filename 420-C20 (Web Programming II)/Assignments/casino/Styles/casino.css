@@ -1,0 +1,115 @@
+/*-----------------------HTML ELEMENTS-----------------------------*/
+body {
+	background-image: url("../Images/montreal_night.jpg");
+}
+input {
+	color: black;
+}
+button {
+	color: black;
+}
+
+/*---------------------HTML CLASSES--------------------------------*/
+.UserInput {
+	float: left;
+	color: white;
+	background-color: #333;
+	width: 90%;
+	padding-bottom: 65%;
+	margin-left: 4%;
+	margin-right: 4%;
+	opacity: .95;
+	border-style: solid;
+	border-color: white;
+	border-width: 2px;
+	border-radius: 3px;
+	padding: 2%;
+}
+.UserInfo {
+	float: left;
+	color: white;
+	background-color: #333;
+	width: 20%;
+	padding-bottom: 65%;
+	margin-right: 4%;
+	opacity: .95;
+	border-style: solid solid solid none;
+	border-color: white;
+	border-width: 2px;
+	border-radius: 2px;
+	padding: 2%;
+	opacity: .9;
+}
+.ProcessingBets {
+	float: right;
+	color: white;
+	background-color: #333;
+	width: 70%;
+	padding-left: 3%;
+	padding-top: 3%;
+	padding-bottom: 10%;
+	border-style: solid none solid solid;
+	border-color: white;
+	border-width: 2px;
+	border-radius: 2px;
+	opacity: .95;
+}
+.gameBoard {
+	overflow: hidden;
+}
+.links {
+	float: right;
+}
+.CasinoLogo {
+	float: left;
+	clear: right;
+	display: inline;
+}
+.CasinoName {
+	color:white;
+	font-weight:bold;
+	display:inline;
+}
+.centerToPage {
+	margin-left:auto;
+	margin-right:auto;
+}
+.placingBets {
+	display: inline;
+	float: left;
+	width: 50%;
+	overflow: right;
+}
+.diceAnimations {
+	float: right;
+	width: 50%;
+}
+
+.rightFloat {float: right;}
+
+#return {
+	background-color: #333;
+	height: 100%;
+	width: 100%;
+	opacity: 0.9;
+	color: white;
+	text-align: center;
+	margin-top: 2%;
+	padding: 15% 5% 15% 5%;
+	border-style: solid;
+	border-color: black;
+
+}
+#return a {
+	color: #FFF;
+	font-size: 1em;
+}
+#return p {
+	font-size: 2em;
+}
+
+#return #visible {
+	display: inline;
+}
+
+

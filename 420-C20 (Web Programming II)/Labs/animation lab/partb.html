@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Part B</title>
+  </head>
+<body>
+
+<canvas id="myCanvas" width="300" height="200">
+    <p>Your browser doesn’t currently support the Canvas. 
+    Please check caniuse.com/#feat=canvas for information on 
+    browser support for canvas.</p>
+</canvas>
+
+<script>
+const dx = 3;
+const startPos = 303;
+var currentPos = 303;
+
+window.onload = setUp;
+	function setUp() {
+		
+		myCanvas = document.getElementById("myCanvas");
+		ctx = myCanvas.getContext("2d");
+		
+		ctx.font="italic bold 30px Arial";
+		setInterval(scrollText, 30);
+	}
+
+	var randomColour = function() {
+		return Math.floor(Math.random()*16777215).toString(16);
+	}
+	
+	function scrollText() {
+		ctx.beginPath();
+		console.log("getting called");
+		ctx.fillStyle = "#" + randomColour();
+		
+		if (currentPos < -351) {
+			currentPos = startPos;
+		}
+		else {
+			currentPos -= dx;
+		}
+		
+		ctx.clearRect(0,0,300,200);
+		ctx.fillText("I'm a winner!!!", currentPos, 150);
+		ctx.stroke();
+	}
+	
+</script>
+</body>
+</html>

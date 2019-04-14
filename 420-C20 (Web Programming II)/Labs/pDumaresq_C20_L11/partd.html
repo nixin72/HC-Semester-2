@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Part D</title>
+  </head>
+  <style>
+	canvas {
+		background-color: #000026;
+		border-radius: 300px;
+	}
+  </style>
+<body>
+
+<canvas id="myCanvas" width="600" height="600">
+    <p>Your browser doesn’t currently support the Canvas. 
+    Please check caniuse.com/#feat=canvas for information on 
+    browser support for canvas.</p>
+</canvas>
+
+<script>
+
+window.onload = setUp;
+
+function setUp() {
+	myCanvas = document.getElementById("myCanvas");
+	ctx = myCanvas.getContext("2d");
+	
+	setInterval(runthrough, 1000);
+}
+	
+function runthrough() {
+	
+	radius = .1;
+	xValue = 300;
+	yValue = 300;
+	var star = makeStars();
+	
+	setInterval(drawStars, 10);
+	
+	function makeStars() {
+		star = new Array();
+		numStars = Math.floor(Math.random()*100);
+		
+		for (var i = 0 ; i < numStars ; i++) {
+			star[i] = {
+				moveX: ((Math.random() *5) - (Math.random()*5)),
+				moveY: ((Math.random() *5) - (Math.random()*5)),
+				posX: 300,
+				posY: 300,
+				radius: .1,
+			}
+		}
+		
+		return star;
+	}
+	
+	function drawStars() {
+		ctx.clearRect(0,0,600,600);
+		for (var j = 0 ; j < star.length ; j++) {
+			ctx.beginPath();
+			ctx.arc(star[j].posX, star[j].posY,star[j].radius,0,2*Math.PI);
+			ctx.fillStyle = "yellow";
+			ctx.fill();
+			ctx.strokeStyle = "yellow";
+			ctx.stroke();
+	
+			star[j].radius += .008;
+			star[j].posX += star[j].moveX;
+			star[j].posY += star[j].moveY;
+		}
+		
+	}
+}	
+</script>
+</body>
+</html>

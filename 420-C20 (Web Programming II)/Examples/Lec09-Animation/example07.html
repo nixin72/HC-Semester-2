@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<title>Butterfly</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+	img {
+		left: -150px;
+		top: 250px;
+		position: absolute;
+	}
+</style>
+</head>
+<body>
+ <p><img src="./images/butterfly.gif" id="butterfly" alt="Image of a butterfly" height="120" width="150" /></p>
+<h1>Butterfly</h1>
+<p>According to Wikipedia:</p>
+<blockquote><p>A butterfly is an insect of the order Lepidoptera, it belongs to either the Hesperioidea (the skippers) or Papilionoidea (all other butterflies) Superfamilies. Some authors have also suggested the inclusion of the superfamily Hedyloidea, the American butterfly moths. They are notable for their unusual life cycle with a larval caterpillar stage, an inactive pupal stage and a spectacular metamorphosis into a familiar and colourful winged adult form. The diverse patterns formed by their brightly coloured wings and their erratic-yet-graceful flight have made butterfly watching a popular hobby.</p></blockquote>
+
+<script>
+//get the size of the browser window
+var screenHeight = window.innerHeight;
+var screenWidth = window.innerWidth;
+//set the starting position for the animation
+var baseTop = (screenHeight > 250) ? 250 : screenHeight-120;
+var baseLeft = -150;
+//set the starting positions
+var topPosition = baseTop;
+var leftPosition = baseLeft;
+
+//move the buttefly across the screen until it reaches the top or the left hand side of the screen
+var flyButterfly = function() {
+	var butterfly = document.getElementById("butterfly");
+	butterfly.style.left = leftPosition + "px";
+	butterfly.style.top = topPosition + "px";
+	//sets the top position higher on the screen and the left position farther to the right.
+	topPosition -= 3;
+	leftPosition += 10;
+	if ((topPosition <= -120) || (leftPosition > (screenWidth+150))) {
+		topPosition = baseTop;
+		leftPosition = baseLeft;
+	}
+}
+
+function doSetUp() {
+	//eliminate the horizontal scroll bar
+	document.documentElement.style.overflowX = 'hidden';
+	setInterval('flyButterfly()', 100);
+}
+
+addEventListener('load',doSetUp,false);
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>parta2.html</title>
+</head>
+
+<body>
+
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+<script>
+var startAmt = [1, 5, 10, 25, 50, 100];
+var rate = [10.61, 0.65, 11.45, 56.53, 1.45, 4.60];
+var currencyTo = ["Argentina", "Euro", "South Africa", 
+"Russia", "Tunisia", "Venezuela"];
+
+var counter = 0;
+while (counter <= startAmt.length) {
+document.getElementsByTagName("p").textContent = 
+	startAmt[counter] + " Canadian Dollars is " +
+	rate[counter] + " in " + currencyTo[counter];
+
+	counter++;
+}
+
+var convertFromCAD = function(inpAmount, theRate) {
+	return (inpAmount * theRate);
+}
+
+</script>
+</body>
+</html>

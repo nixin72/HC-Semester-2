@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Real Estate Inquiry</title>
+</head>
+
+<body>
+<h1>Real Estate Inquiry</h1>
+<form action="formProcessor.html" method="get" id="reForm">
+  <p>
+    <label for="visitorName">Name:</label>
+    <input name="visitorName" type="text" id="visitorName" size="50" />
+  </p>
+  <p>
+    <label for="emailAddr">Email Address: </label>
+    <input name="emailAddr" type="text" id="emailAddr" size="50" />
+  </p>
+  <p>
+    <label for="phoneNumber">Phone: </label>
+    <input name="phoneNumber" type="text" id="phoneNumber" size="50" />
+  </p>
+  <p>
+    <label for="area">Area of Town: </label>
+    <input name="area" type="text" id="area" size="50"  />
+  </p>
+  <p>
+    <label for="propertyType">Property</label>
+    <select name="propertyType" id="propertyType">
+      <option value="unselected">-- Select a Property Type --</option>
+      <option value="condo">Condos</option>
+      <option value="single">Single Family Homes</option>
+      <option value="multi">Multifamily Homes</option>
+      <option value="mobile">Mobile Homes</option>
+      <option value="land">Land</option>
+    </select>
+  </p>
+  <p>
+    <label for="sqFeet">Square Feet: </label>
+    <input name="sqFeet" type="text" id="sqFeet" size="5" />
+  </p>
+  <p>
+    <label for="bedroom">Bedrooms: </label>
+    <input name="bedroom" type="text" id="bedroom" size="5" />
+  </p>
+  <p>
+    <label for="maxPrice">Maximum Price: </label>
+    <input name="maxPrice" type="text" id="maxPrice" size="12" />
+  </p>
+  <fieldset>
+    <legend>How should we contact you?</legend>
+    <p>
+      <label>
+        <input type="radio" name="contactHow" value="callMe" id="contactPhone" />
+        Call Me</label>
+      <br />
+      <label>
+        <input type="radio" name="contactHow" value="emailMe" id="contactEmail" />
+        Email Me</label>
+      <br />
+    </p>
+  </fieldset><input name="subButton" type="submit" />
+</form>
+
+<script src="script/realEstate.js">
+</script>
+</body>
+</html>

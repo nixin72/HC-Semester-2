@@ -1,0 +1,31 @@
+  .container {
+    margin-top: 1em;
+    color: #292929;
+    width: 300px;
+    border: 1px solid #BABABA;
+    padding: 1em;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .changed {
+    background-color: yellow;
+  }
+  
+  .box {
+    margin-top: 1em;
+    color: #292929;
+    width: 300px;
+    border: 1px solid #BABABA;
+    background-color: #ddd;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }

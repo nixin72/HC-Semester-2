@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>string methods</title>
+</head>
+
+<body>
+<script>
+var myArr1 = [1,6,3,17,29, 2];
+var myArr2 = ["cat", "rat", "mat"];
+var myStr = "This, is, a, comma, separated, string";
+
+console.log("Array 1: ", myArr1 );
+console.log("Array 2: ", myArr2 );
+
+console.log("Slice the array from 2 to 4: ", myArr1.slice(2,4));
+
+var theShift = myArr2.shift();
+console.log("Shifted value: ", theShift);
+console.log("And the rest of the array: ", myArr2);
+
+myArr2.unshift("kitten");
+console.log("Unshifted to add to the beginning: ", myArr2);
+myArr2.unshift("dog", 6);
+console.log("Unshifted to add two to the beginning: ", myArr2);
+
+var thePop = myArr2.pop();
+console.log("Popped value: ", thePop);
+console.log("And the rest of the array: ", myArr2);
+
+myArr2.push("horse", "foal");
+console.log("Pushed to add two to the end: ", myArr2);
+
+myArr2.splice(2, 0, "frog", "tadpole", "tern", "gull");
+console.log("Spliced 4 values starting at position 2: ", myArr2)
+
+myArr2.splice(1, 3, "harold", "maude", "francine", "turnip");
+console.log("Spliced 4 values starting at position 2, removing 3: ", myArr2)
+
+myArr2 = myArr2.sort();
+console.log("Array 2 after sorting: " + myArr2 );
+
+myArr2 = myArr2.reverse();
+console.log("Array 2 after reverse: " + myArr2 );
+
+myArr1 = myArr1.sort();
+console.log("Sorting numeric array using just sort: ", myArr1);
+myArr1 = myArr1.sort(function(a,b){return a-b});
+console.log("Sorting numeric array using just numeric sort: ", myArr1);
+
+var myNewArr = myStr.split(", ");
+console.log("Split string into array: ", myNewArr);
+
+var myNewStr = myArr1.join("toodle");
+console.log("Array joined by word toodle ", myNewStr);
+
+</script>
+</body>
+
+</html>

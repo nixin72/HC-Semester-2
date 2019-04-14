@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>
+		Home
+	</title>
+	<link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.11.4/themes/vader/jquery-ui.css'/>
+	<link rel="stylesheet" type="text/css" href="Styles/casino.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
+	crossorigin="anonymous">
+	<link href="Styles/casino.css" rel="stylesheet" type="text/css">	
+</head>
+
+<body>
+<!---------------------------------------------------------------------------------------------------
+------------------------------------------BOOTSTRAP BAR----------------------------------------------
+---------------------------------------------------------------------------------------------------->
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+           	<div class="CasinoLogo">
+				<section class="CasinoName">
+					<img src="Images/casinoLogo.jpg" height="7%" width="7%">
+						Casino Black Lotus
+				</section>
+			</div>   
+        </div>
+    </div>
+</nav>
+
+<!---------------------------------------------------------------------------------------------------
+--------------------------------------------USER INPUT-----------------------------------------------
+---------------------------------------------------------------------------------------------------->
+<div class="UserInput" id="userInput">
+<div id="playerReturn">
+<table>
+
+<form method="get" action="game.html" >
+	<table class="centerToPage">
+		<tr>
+			<td class="rightFloat"><label><br />First Name:&nbsp;&nbsp;</label></td>
+			<td><input class="form-control" type="text" name="name" id="fname1" placeholder="First Name" /></td>
+		</tr>
+		<tr>
+			<td class="rightFloat"><label><br />Last Name:&nbsp;&nbsp;</label></td>
+			<td><input class="form-control" type="text" name="name" id="lName1" placeholder="Last Name" /></td>
+		</tr>
+		<tr>
+			<td class="rightFloat"><label><br />Phone number:&nbsp;&nbsp;</label></td>	
+			<td><input class="form-control" type="text" name="phoneNum" id="phone1" placeholder="(123) 456-7890" /></td>
+		</tr>
+		<tr>
+			<td class="rightFloat"><label><br />Postal Code:&nbsp;&nbsp;</label></td>
+			<td><input class="form-control" type="text" name="postal" id="postal1" placeholder="Postal Code" /></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td colspan="2" class="centerToPage"><label>How much money would you like?</label></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td colspan="2" class="centerToPage">
+			<input class="form-control" type="text" id="money1" name="starting" placeholder="Max: 5000$">
+		</tr>
+		<tr>
+			<td></td>
+			<td><strong><section id="message"></section></strong></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><br />
+			<input class="btn" type="submit" name="start" id="startPlaying" value="Start Playing!" /></td>
+		</tr>
+	</table>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+</form>
+</table>	
+</div>
+<div id="GoToGame">
+</div>
+<div id="returnToIntro">
+</div>
+<a href="index.html" id="linkBack"></a>
+</div>
+
+<!--------------------------------------JAVASCRIPT LINKS-------------------------------------------->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js">
+</script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script src="JavaScript/input.js">
+</script>
+
+</body>
+</html>

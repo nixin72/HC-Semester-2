@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Feedback Form</title>
+
+<link href="./styles/formstyles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Give Us Your Feedback</h1>
+<form method="get" action="response.html" name="fback">
+	<p><label class="textlabel">
+    Last Name: 
+	    
+    </label>
+	  <input name="lname"  type="text" id="lname" placeholder="Last Name" size="30" maxlength="30" />
+	</p>
+       
+	<p><label class="textlabel">
+  First Name: </label>
+	  <input name="fname"  type="text" id="fname" placeholder="First Name" size="25" maxlength="25"  />
+  </p>
+        
+	<p><label class="textlabel">
+  Email: </label>
+	  <input name="Email"  type="text" id="email" placeholder="Email"  size="50" maxlength="50"  />
+  </p>
+        
+	<p><label class="textlabel">Phone Number: </label>
+	  <input name="PhoneNum"  type="text" id="phoneNum" placeholder="Phone" size="20" maxlength="20" />
+    </p>
+        
+ 
+<fieldset>
+	<legend>How would you like to receive feedback (Check all that apply)</legend>
+	<p>
+    <input class="checklabel" type="checkbox" name="chk_email" id="chk_email" checked="checked"/>
+   		<label>Email</label><br />
+    <input class="checklabel" type="checkbox" name="chk_phone" id="chk_phone" />
+   		<label>Phone</label><br />
+    <input class="checklabel" type="checkbox" name="chk_fbook" id="chk_fbook" />
+    	<label>Facebook</label>
+    </p>
+</fieldset>
+<br />
+
+	<label class="textlabel">Comments: </label>
+	<textarea name="cmt" cols="50" rows="6" id="cmt" placeholder="Provide us with feeback"></textarea>
+	<br /><br />
+
+<label class="textlabel">
+  Our Rating:</label>
+	<select name="rating options" id="ratingOptions">
+    	<option value="0">-- Select One --</option>
+    	<option value="1">Excellent</option>
+        <option value="2">Good</option>
+        <option value="3">Fair</option>
+        <option value="4">Poor</option>
+        <option value="5">Bad</option>
+	</select>
+    <br /><br />
+<fieldset>
+	<legend>How did you hear about us?</legend>
+    <p>
+    <input class="checklabel" type="radio" name="how" id="how_1" />
+    	<label>Search Engine</label><br />
+	<input class="checklabel" type="radio" name="how" id="how_2" />
+    	<label>Friends</label><br />
+    <input class="checklabel" type="radio" name="how" id="how_3" />
+    	<label>Advertisment</label>
+    </p>
+</fieldset>
+<br />
+<input class="buttoncss" type="submit" value="Tell Us!" />
+    
+</form>
+</body>
+</html>

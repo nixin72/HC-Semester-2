@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+  <head>
+    <title>Changing Images - 2</title>
+  </head>
+
+<body>
+
+  <h2>How's That Again?</h2>
+	 <img src="images/backgroundDark.png" width="132" height="186" alt="background" id="card1" />&nbsp;&nbsp;&nbsp;
+	 <img src="images/backgroundDark.png" width="132" height="186" alt="background" id="card2" />&nbsp;&nbsp;&nbsp;
+	 <img src="images/backgroundDark.png" width="132" height="186" alt="background" id="card3" /><br/>
+
+  <script>
+  
+  	var cardEl1 = document.getElementById("card1");
+  	var cardEl2 = document.getElementById("card2");
+  	var cardEl3 = document.getElementById("card3");
+
+	var flipCard1 = function() {
+		var imgCard = document.getElementById("card1");
+		imgCard.src = "images/club_A.png";
+	}
+	
+	var flipCard2 = function() {
+		var imgCard = document.getElementById("card2");
+		imgCard.src = "images/Heart_A.png";
+	}
+	
+	var flipCard3 = function() {
+		var imgCard = document.getElementById("card3");
+		imgCard.src = "images/spade_A.png";
+	}
+	
+
+	cardEl1.addEventListener('click', flipCard1, false);
+	cardEl2.addEventListener('click', flipCard2, false);
+	cardEl3.addEventListener('click', flipCard3, false);
+  </script>
+
+</body>
+
+</html>

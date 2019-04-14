@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Part C</title>
+  </head>
+  <style>
+  
+  #myCanvas2 {
+	background-color: grey;
+  }
+  
+  </style>
+<body>
+
+<canvas id="myCanvas" width="350" height="200">
+    <p>Your browser doesn’t currently support the Canvas. 
+    Please check caniuse.com/#feat=canvas for information on 
+    browser support for canvas.</p>
+</canvas>
+
+<canvas id="myCanvas2" width="600" height="200">
+    <p>Your browser doesn’t currently support the Canvas. 
+    Please check caniuse.com/#feat=canvas for information on 
+    browser support for canvas.</p>
+</canvas>
+
+<script>
+	window.onload = getCanvas();
+	startPos = -300;
+	bodyStart1 = -250;
+	bodyStart2 = -300;
+	wheel1Start = -225;
+	wheel2Start = -75;
+	
+	function getCanvas() {
+		myCanvas2 = document.getElementById("myCanvas2");
+		ctx2 = myCanvas2.getContext("2d");
+		
+		setInterval(drawCar2, 50);
+	}
+	
+	function drawCar2() {
+		ctx2.clearRect(0,0,600,200);
+		ctx2.beginPath();
+		ctx2.lineWidth="1";
+		ctx2.strokeStyle="red";
+		ctx2.fillStyle = "red";
+		ctx2.rect(bodyStart1,70,175,80); 
+		ctx2.rect(bodyStart2,110,300,40);
+		ctx2.fill();
+		ctx2.stroke();
+		
+		
+		//front wheel
+		ctx2.beginPath();
+		ctx2.lineWidth = 10;
+		ctx2.strokeStyle = "black";
+		ctx2.fillStyle = "DarkGrey";
+		ctx2.arc(wheel1Start,150,25,0,Math.PI);
+		ctx2.fill();
+		ctx2.stroke();
+		
+		//back wheel
+		ctx2.beginPath();
+		ctx2.arc(wheel2Start,150,25,0,Math.PI);
+		ctx2.fillStyle = "DarkGrey";
+		ctx2.fill();
+		ctx2.stroke();
+		
+		if (bodyStart2 < 600) {
+			bodyStart1 += 10;
+			bodyStart2 += 10;
+			wheel1Start +=10;
+			wheel2Start +=10;
+		}
+		else {
+			bodyStart1 = -250;
+			bodyStart2 = -300;
+			wheel1Start = -225;
+			wheel2Start = -75;
+		}
+	}
+	
+	//The fancy car that I'm not continuing to attempt animating with the bezier curves.
+	window.onload = setUp;
+	function setUp() {
+		myCanvas = document.getElementById("myCanvas");
+		ctx = myCanvas.getContext("2d");
+		drawCar();
+	}
+	function drawCar() {
+		ctx.beginPath();
+		ctx.lineWidth = 1;
+		ctx.bezierCurveTo(20, 100, 100, 110, 120, 50);
+		ctx.lineTo(200,50);
+		ctx.bezierCurveTo(250, 110, 250, 100, 270, 100);
+		ctx.bezierCurveTo(300, 105, 300, 90, 300, 150);
+		ctx.lineTo(20, 150);
+		ctx.bezierCurveTo(20, 100, 100, 110, 10, 100);
+		ctx.fillStyle = "red";
+		ctx.fill();
+		ctx.stroke();
+		//front wheel
+		ctx.beginPath();
+		ctx.lineWidth = 10;
+		ctx.fillStyle = "DarkGrey";
+		ctx.arc(70,150,25,0,Math.PI);
+		ctx.fill();
+		ctx.stroke();
+		//back wheel
+		ctx.beginPath();
+		ctx.arc(250,150,25,0,Math.PI);
+		ctx.fillStyle = "DarkGrey";
+		ctx.fill();
+		ctx.stroke();
+	}
+</script>
+</body>
+</html>

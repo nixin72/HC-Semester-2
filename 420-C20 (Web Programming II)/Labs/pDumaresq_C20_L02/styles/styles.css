@@ -1,0 +1,17 @@
+.icon {
+	max-width: 150px;
+	margin: 0 auto;
+	display: block;
+}
+
+.teams section {
+	text-align: center;
+}
+
+@media (min-width: 1200px) {
+h3 {margin-top: 0px;}
+
+.teams section {text-align: left;}
+
+
+}

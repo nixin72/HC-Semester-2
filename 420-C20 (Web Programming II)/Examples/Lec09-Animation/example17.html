@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Moving clock</title>
+  </head>
+<body>
+<canvas id="myCanvas" width="200" height="200">
+<!-- OPTION 1: leave a message here if browser doesn't support canvas -->
+    <p>Your browser doesn’t currently support the Canvas. 
+    Please check caniuse.com/#feat=canvas for information on 
+    browser support for canvas.</p>
+
+  <!-- OPTION 2: put fallback content (text, image, Flash, etc.) 
+                 if the browser doesn't support canvas -->
+</canvas>
+
+<script>
+	var setUp = function () {
+		hourStart= Math.PI * 3 /2;
+		minuteStart = 0;
+		minuteMove = Math.PI/60;
+		hourMove = Math.PI/30;
+		minuteCurrent = minuteStart;
+		hourCurrent = hourStart;
+		myCanvas = document.getElementById("diceCanvas");
+		context = myCanvas.getContext("2d");
+		//move to the middle of the screen and set the origin there using translate
+		context.translate(100,100);
+		setInterval(drawClock,10);
+	}
+		
+	var drawClock = function() {
+		context.clearRect(-100,-100,200,200);
+		//draw clock
+		context.restore(); 
+		context.strokeStyle = 'SeaGreen';
+		context.lineWidth   = 8;
+		// Draw a circle using the arc function.
+		context.beginPath();
+		// Arguments: x, y, radius, start angle, end angle, anticlockwise
+		context.arc(0, 0, 90, 0, 2*Math.PI, false);
+		context.stroke();
+		
+		//Draw the hour markings
+		context.strokeStyle = "black";
+		context.lineWidth = 2;
+		for (var i=0;i<12;i++){  
+			context.beginPath();  
+			context.rotate(Math.PI/6);  
+			context.moveTo(71,0);  
+			context.lineTo(86,0);  
+			context.stroke();  
+		}  
+		context.save();
+
+		//draw the hands
+		//minutes hand
+		context.beginPath();
+		context.lineWidth = 3;
+		context.strokeStyle = "Purple";
+		context.beginPath();
+		minuteCurrent += minuteMove;
+		if (minuteCurrent > 2 * Math.PI)
+			minuteCurrent = minuteStart;
+		context.rotate(minuteCurrent);			
+		context.moveTo(-20,0);  
+		context.lineTo(80,0);
+		context.stroke(); 
+
+		//hours hand
+		context.beginPath();  
+		context.lineWidth = 6;
+		context.strokeStyle = "RebeccaPurple";
+		hourCurrent -= hourMove;
+		context.rotate(hourCurrent);
+		if (hourCurrent < -Math.PI/2)
+			hourCurrent = hourStart;
+		context.moveTo(-10,0);  
+		context.lineTo(50,0);
+		context.stroke(); 
+	}
+
+addEventListener('load', setUp, false);
+</script>
+
+
+</body>
+</html>

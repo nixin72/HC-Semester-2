@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<title>Unicycle</title>
+<meta http-equiv="content-type"
+content="text/html;charset=iso-8859-1" />
+</head>
+<body>
+<p><img src="./images/unicycle/unicycle1.gif" alt="Image of a unicycle." height="75" width="75"  id="imgUni" /></p>
+<form action="">
+<p><input type="button" value=" Turn " id="btnTurn" />
+<input type="button" value=" Stop " id="btnStop" /></p>
+</form>
+
+<script>
+var turnUnicycle;
+var unicycle = new Array(16);
+var curUnicycle = 0;
+unicycle[0] = "./images/unicycle/unicycle0.gif"; 
+unicycle[1] = "./images/unicycle/unicycle1.gif";
+unicycle[2] = "./images/unicycle/unicycle2.gif"; 
+unicycle[3] = "./images/unicycle/unicycle3.gif";
+unicycle[4] = "./images/unicycle/unicycle4.gif"; 
+unicycle[5] = "./images/unicycle/unicycle5.gif";
+unicycle[6] = "./images/unicycle/unicycle6.gif"; 
+unicycle[7] = "./images/unicycle/unicycle7.gif";
+unicycle[8] = "./images/unicycle/unicycle8.gif"; 
+unicycle[9] = "./images/unicycle/unicycle9.gif";
+unicycle[10] = "./images/unicycle/unicycle10.gif"; 
+unicycle[11] = "./images/unicycle/unicycle11.gif";
+unicycle[12] = "./images/unicycle/unicycle12.gif"; 
+unicycle[13] = "./images/unicycle/unicycle13.gif";
+unicycle[14] = "./images/unicycle/unicycle14.gif"; 
+unicycle[15] = "./images/unicycle/unicycle15.gif";
+
+var turn = function() {
+     if (curUnicycle == 15)
+           curUnicycle = 0;
+     else
+           ++curUnicycle;
+     document.getElementById("imgUni").src = unicycle[curUnicycle];
+}
+
+var startTurning = function() {
+     if (turnUnicycle != null)
+           clearInterval(turnUnicycle);
+     turnUnicycle = setInterval("turn()", 10);
+}
+
+var stopTurning = function() {
+	clearInterval(turnUnicycle);
+}
+
+document.getElementById("btnTurn").addEventListener('click',startTurning,false);
+document.getElementById("btnStop").addEventListener('click',stopTurning,false);
+
+</script>
+
+
+</body>
+</html>

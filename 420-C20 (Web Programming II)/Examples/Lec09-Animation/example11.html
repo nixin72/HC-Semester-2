@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Canvas</title>
+<style type="text/css">
+canvas {
+	border: thin solid black;
+}
+</style>
+
+</head>
+
+<body>
+<canvas id="myCanvas" width="500" height="250">
+<!-- OPTION 1: leave a message here if browser doesn't support canvas -->
+    <p>Your browser doesn’t currently support the Canvas. 
+    Please check caniuse.com/#feat=canvas for information on 
+    browser support for canvas.</p>
+
+  <!-- OPTION 2: put fallback content (text, image, Flash, etc.) 
+                 if the browser doesn't support canvas -->
+</canvas>
+<script>
+
+var elCanvas = document.getElementById('myCanvas');
+var context = elCanvas.getContext('2d');
+
+context.beginPath();
+context.moveTo(50,50);
+context.lineTo(250,150);
+context.stroke();
+
+//context.fillStyle="yellow";
+//context.fillRect(250, 50, 150,50);
+
+//context.font = 'italic 30pt Verdana, sans-serif';
+//context.fillStyle="DarkSlateGrey";
+//context.fillText('JavaScript is Awesome!', 10, 200);
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,28 @@
+#start {
+    position: relative;
+    height: 350px;
+    width: 350px;
+    border-radius: 5px;
+    background-color: #bab;
+    left: 25px;
+	float:left;
+}
+
+#finish {
+	color: #fff;
+    position: relative;
+	margin-left:3em;
+	margin-left:3em;
+    height: 350px;
+    width: 350px;
+    border-radius: 5px;
+    background-color: #009;
+    left: 25px;
+	float:left;
+	z-index: 1;
+}
+
+img {
+	z-index: 5;
+}
+

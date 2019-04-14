@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Casino Black Lotus</title>
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
+crossorigin="anonymous">-->
+<link rel="stylesheet" href="styles/casino.css" >
+<style>
+body {
+	background-image: url("images/montreal_night.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+</style>
+</head>
+
+<body>
+<div class="all">
+<!--Script to input your bet-->
+ 
+<!--Bootstrap navbar
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+			<a class="navbar-brand" href="#">
+			Casino <br />Black Lotus</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#"><a href="game.hthml">Games</a></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+--> 
+<h1>Crown and Anchor</h1>
+
+<!--Dummy player info-->
+<div class="playerInfo">
+<p>Name: Philip Dumaresq<br />
+Postal code: J9J 0W2<br />
+Phone number: 123-456-7890</p>
+</div>
+<!-- saving for latter assignements
+<div class="gamePage">
+<p>How much money would you like?</p>
+<p id="startBetting"><p id="moneyInput"><button onclick="startingMoney()">starting money</button><p>
+
+<p>How much would you like to bet on each symbol?</p>
+<button onclick="betOnCrown()">Crown</button><label id="betForCrown"></label><br />
+<button onclick="betOnAnchor()">Anchor</button><label id="betForAnchor"></label><br />
+<button onclick="betOnDiamonds()">Diamond</button><label id="betForDiamonds"></label><br />
+<button onclick="betOnHearts()">Hearts</button><label id="betForHearts"></label><br />
+<button onclick="betOnClubs()">clubs</button><label id="betForClubs"></label><br />
+<button onclick="betOnSpades()">Spades</button><label id="betForSpades"></label><br />
+<br />
+
+<p>Roll the dice</p>
+<button onclick="moneyDeduction(), firstRoll(), secondRoll(), thirdRoll(), 
+winOrLose(), winOnCrown(), winOnAnchor(), winOnDiamond(), winOnHearts(), 
+winOnSpades(), winOnClubs(), moneyMade()">Roll</button><br />
+<p id="yourRemainingMoney"></p>
+<label id="firstDiceRoll"></label><br />
+<label id="secondDiceRoll"></label><br />
+<label id="thirdDiceRoll"></label>
+<br />
+<p id="winning"></p>
+</div><!--gamePage div-->
+
+</div>
+<div class="gamePage">
+<script src="./javaScript/casino.js">
+</script>
+<script src="./javaScript/diceRolls.js">
+</script>
+<script src="./javaScript/winning.js">
+</script>
+</div>
+</body>
+</html> 

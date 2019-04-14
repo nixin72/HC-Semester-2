@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<title>Double movement</title>
+<style type="text/css">
+	img {
+		position: relative;
+	}
+</style></head>
+<body>
+<p><img src="./images/oldBicycle/oldBicycle0.gif" alt="Image of a bike." height="151" width="135"  id="imgBike" /></p>
+
+<script>
+
+//first set up the animated of the image
+var oldBicycle = new Array(4);
+var curBike = 0;
+for (var imagesLoaded=0; imagesLoaded < oldBicycle.length; ++imagesLoaded) {
+	oldBicycle[imagesLoaded] = new Image();
+	oldBicycle[imagesLoaded].src = "./images/oldBicycle/oldBicycle" + imagesLoaded + ".gif";
+}
+
+//eliminate the horizontal scroll bar
+document.documentElement.style.overflowX = 'hidden';
+
+//get the width of the browser window
+var screenWidth = window.innerWidth;
+//set the starting position for the animation
+var baseLeft = screenWidth + 140;
+//set the starting positions
+var leftPosition = baseLeft;
+
+
+var doAnimation = function() {
+	var theImage = document.getElementById("imgBike");
+     if (curBike == 3)
+           curBike = 0;
+     else
+           ++curBike;
+	theImage.src = oldBicycle[curBike].src;
+		
+	theImage.style.left = leftPosition + "px";
+	leftPosition -= 25;
+	if  (leftPosition < -140) {
+		leftPosition = baseLeft;
+	}
+	
+	setTimeout('doAnimation()', 150);
+
+	//requestAnimationFrame(doAnimation);
+}
+
+addEventListener('load', doAnimation, false);
+
+</script>
+
+
+</body>
+</html>

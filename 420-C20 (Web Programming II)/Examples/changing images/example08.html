@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+  <head>
+    <title>Changing Images - A Better Way</title>
+  </head>
+
+<body>
+
+  <h2>How's That Again? - A Better Way</h2>
+	<div id="theCards">
+	 <img src="images/backgroundDark.png" width="132" height="186" alt="background" id="card1" name="myHand"/>&nbsp;&nbsp;&nbsp;
+	 <img src="images/backgroundDark.png" width="132" height="186" alt="background" id="card2" name="myHand"/>&nbsp;&nbsp;&nbsp;
+	 <img src="images/backgroundDark.png" width="132" height="186" alt="background" id="card3" name="myHand"/><br/>
+	</div>
+  <script>
+  
+	var handArr = document.getElementsByName("myHand");
+	const cardDeck = ["images/club_A.png", "images/Heart_A.png", "images/spade_A.png", "images/diamond_A.png"];
+
+	//This function uses the event object which we have not learned yet. Use at your own risk
+	var  flipCard = function(e) {
+		var target = e.target;
+		var cardToFlip = (target.id).slice(-1);
+		target.src = cardDeck[cardToFlip];
+	}
+
+	var  flipCardThis = function() {
+		var cardToFlip = (this.id).slice(-1);
+		this.src = cardDeck[cardToFlip];
+	}
+
+	var flipCard1 = function() {
+		var imgCard = document.getElementById("card1");
+		imgCard.src = "images/club_A.png";
+	}
+	
+	var flipCard2 = function() {
+		var imgCard = document.getElementById("card2");
+		imgCard.src = "images/Heart_A.png";
+	}
+	
+	var flipCard3 = function() {
+		var imgCard = document.getElementById("card3");
+		imgCard.src = "images/spade_A.png";
+	}
+	
+
+	for (var i=0; i<handArr.length; i++) {
+		var varName = "card"+(i+1);
+		var fnName="flipCard"+(i+1);
+		var j = (i+1)+"";
+		var theEl = document.getElementById(varName);
+		//These all add an event,  but do  not do exactly what you want them to do
+//		theEl.addEventListener('click', fnName, false);
+//		theEl.addEventListener('click', function() {console.log("hello from click");}, false);
+//		theEl.addEventListener('click', eval(fnName), false);
+		theEl.addEventListener('click', flipCardThis, false);
+
+		//This function uses the event object which we have not learned yet. Use at your own risk
+//		theEl.addEventListener('click',function(e) {flipCard(e);},false);
+	}
+	
+  </script>
+
+</body>
+
+</html>

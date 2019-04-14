@@ -1,0 +1,14 @@
+Didn't creat loop in main method of SudokuInterface class to loop through the method calls within that class and the SudokuGame 
+class. This means that to run either the command line or frame you need to have certain sections of code commented out. Code to
+be commented is marked with a 
+/*
+----------------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+directly before it. The code as it stands is commented to run the SudokuFrame class.
+There's also a weird bug where if you enter an invalid value, then try entering a valid one, it won't update the board.
+The undo button makes this bug even worse, I'm not sure where the source of it is. 
+
+Did not get the check box method in the SudokuInterface class working. 
+
+In my spare time I plan on fixing all of these errors so that I can get the extra practise in using these things. 

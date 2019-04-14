@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Transitions</title>
+<style type="text/css">
+	#div1 {
+		background-color: lightblue;
+		width: 100px;
+		height: 60px;
+		border: 1px solid black;
+		margin: 10px;
+		transition: width 2s;
+	}
+	#div1:hover {
+		width: 400px;
+	}
+	#div2 {
+		background-color: Crimson;
+		width: 100px;
+		height: 60px;
+		border: 1px solid black;
+		margin: 10px;
+		transition: width 2s, height 4s, background-color 6s;
+	}
+	#div2:hover {
+		width: 300px;
+		height: 120px;
+		background-color: DarkSlateGrey;
+	}
+	#div3 {
+		background-color: lightgreen;
+		width: 100px;
+		height: 60px;
+		border: 1px solid black;
+		margin: 10px;
+		transition: transform 3s;
+	}
+	#div3:hover {
+		transform: rotate(-1461deg);
+	}
+	#div4 {
+		background-color: cornflowerblue;
+		width: 100px;
+		height: 60px;
+		border: 1px solid black;
+		margin: 10px;
+		transition: transform 2s linear 1s
+	}
+	#div4:hover {
+		transform: translate(100px) rotate(360deg) scale(2);
+	}
+	#div5 {
+		background-color: DarkGoldenRod;
+		width: 100px;
+		height: 120px;
+		border: 1px solid black;
+		margin: 10px;
+		border-radius:10px;
+		transition: 6s linear;
+	}
+	#div5:hover {
+		transform: translate(100px) rotate(360deg) scale(3);
+	}
+	
+	#outerspace {
+		position: relative;
+		height: 400px;
+		width: 700px;
+		background: #0c0440 url(./images/outerspace.jpg);
+		color: #fff;
+		transition: 3s ease-in;
+	}
+	div.rocket {
+		position: absolute;
+		bottom: 10px;
+		left: 20px;
+		transition: 3s ease-in;
+	}
+	div.rocket div {
+		width: 92px;
+		height: 215px;
+		background: url(./images/rocket.gif) no-repeat;
+		transition: 2s ease-in-out;
+	}
+
+	#outerspace:hover {
+		background-position:-50% bottom
+	}
+	
+	#outerspace:hover div.rocket {
+		transform: translate(520px,-200px);
+	}
+
+	#outerspace:hover div.rocket div {
+		transform: rotate(70deg);
+	}
+
+</style>
+
+
+</head>
+
+<body>
+<div id="div1">Div 1</div>
+<div id="div2">Div 2</div>
+<div id="div3">Div 3</div>
+<div id="div4">Div 4</div>
+<div id="div5">
+	Menu 1 <br/>
+	Menu 2<br/>
+	Menu 3<br/>
+	Menu 4<br/>
+	Menu 5<br/>
+	Menu 6<br/>
+</div>
+<div id="outerspace">
+	<div class="rocket">
+	<div></div>
+	</div>
+</div>
+
+</body>
+</html>

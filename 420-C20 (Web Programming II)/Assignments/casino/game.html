@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<title>Casino</title>
+<link rel="stylesheet" type="text/css" href="Styles/casino.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
+crossorigin="anonymous">
+<link href="Styles/casino.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<!---------------------------------------------------------------------------------------------------
+----------------------------------------BOOTSTRAP NAV BAR--------------------------------------------
+---------------------------------------------------------------------------------------------------->
+
+<nav id="visible" class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+           	<div class="CasinoLogo">
+				<section class="CasinoName">
+					<button type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" 
+						data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					
+					<div class="collapse navbar-collapse links pull-right" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="rules.html">Rules</a></li>
+						</ul>
+					</div>
+					
+					<img src="Images/casinoLogo.jpg" height="7%" width="7%">
+						Casino Black Lotus
+				</section>
+			</div>   
+        </div>
+    </div>
+</nav>
+
+<!------------------------------------------------------------------------------------------
+---------------------------------------USER DATA--------------------------------------------
+------------------------------------------------------------------------------------------->
+
+<div id="visible" class="UserInfo">
+	<h4 id="playerInfo"><strong>Player Info</strong></h4>
+	<p>
+		<section>
+			<label>Name:&nbsp;</label><span id="name2" name="name"></span>
+		</section>
+	</p>
+	<p>
+		<section>
+			<label>Phone number:&nbsp;</label><span id="phone2" name="phone" value="phone"></span>
+		</section>
+	</p>
+	<p>
+		<section>
+			<label>Postal Code:&nbsp;</label><span id="postal2" name="postal"></span>
+		</section>
+	</p>
+	<p>
+		<section>
+			<label>Money remaining:&nbsp;</label><span id="remain2" name="remain"></span>$
+		</section>
+	</p>
+	<p id="wrongPlayer"></p>
+</div>
+
+<!--------------------------------------------------------------------------------------------------
+---------------------------DIV WHERE GAMEPLAY AND BETTING HAPPENS-----------------------------------
+--------------------------------------------------------------------------------------------------->
+
+<form method="get" id="casinoBetting visible">
+	<div class="ProcessingBets">
+		<div class="placingBets">
+
+<!--------------------------------PLACING YOUR BETS------------------------------------------------>		
+
+			<label><img src="Images/diamondDice.png" width="106%" height="106%"></label>
+			<label><img src="Images/crownDice.png" width="106%" height="106%"></label>
+			<label><img src="Images/spadeDice.png" width="106%" height="106%"></label>
+			<br />
+			<input type="text" name="betForDiamonds" id="betForDiamonds" size="9px" />
+			<input type="text" name="betForCrown" id="betForCrown" size="9px"/>
+			<input type="text" name="betForSpades" id="betForSpades" size="9px" />
+			<br />
+			<label><img src="Images/clubDice.png" width="106%" height="106%"></label>
+			<label><img src="Images/anchorDice.png" width="106%" height="106%"></label>
+			<label><img src="Images/heartDice.png" width="106%" height="106%"></label>
+			<br />
+			<input type="text" name="betForClubs" id="betForClubs" size="9px" />
+			<input type="text" name="betForAnchor" id="betForAnchor"  size="9px"/>
+			<input type="text" name="betForHearts" id="betForHearts" size="9px" />
+		</div>	
+		
+<!------------------------------------------------------------------------------------------------------
+----------------------------------ROLLING THE DICE------------------------------------------------------
+------------------------------------------------------------------------------------------------------->
+
+		<div class="diceAnimations">
+		
+			<button type="button" class="btn btn-success" id="rollingTheDice">ROLL THE DICE</button>
+			 
+				<!-- onclick="firstRoll(), secondRoll(), thirdRoll(), moneyDeduction(), winOrLose(), winOnCrown(),
+				winOnAnchor(), winOnDiamond(), winOnHearts(), winOnSpades(), winOnClubs(), moneyMade()" --> 
+				
+				<br />Roll1:&nbsp;<label id="firstDiceRoll"></label>&nbsp;/&nbsp;<label id="die1"></label>
+				<br />Roll2:&nbsp;<label id="secondDiceRoll"></label>&nbsp;/&nbsp;<label id="die2"></label>
+				<br />Roll3:&nbsp;<label id="thirdDiceRoll"></label>&nbsp;/&nbsp;<label id="die3"></label>
+				<br /><label id="DidYouWin"></label>
+				
+			<p style="display: none;">
+				<br />Diamonds:&nbsp; <label><label id="betDiamonds"></label></label>
+				<br />Crown:&nbsp; <label><label id="betCrown"></label></label>
+				<br />Spades:&nbsp; <label><label id="betSpades"></label></label>
+				<br />Clubs:&nbsp; <label><label id="betClubs"></label></label>
+				<br />Anchor:&nbsp; <label><label id="betAnchor"></label></label>
+				<br />Hearts:&nbsp; <label><label id="betHearts"></label></label>
+			</p>	
+		</div>
+	</div>
+</form>
+
+<!--------------------------------------JAVASCRIPT LINKS-------------------------------------------->
+<script src="JavaScript/diceRolls.js">
+	</script>
+<script src="JavaScript/betting.js">
+	</script>
+<script src="JavaScript/winning.js">
+	</script>
+<script src="JavaScript/processData.js">
+</script>
+
+
+</body>
+</html>

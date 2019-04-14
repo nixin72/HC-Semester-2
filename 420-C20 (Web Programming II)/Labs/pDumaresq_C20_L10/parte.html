@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bonus question!</title>
+</head>
+
+<body>
+<canvas id="myCanvas" height="500" width="500">Unfortunately your browser does not support the canvas element</canvas>
+
+<script>
+setInterval(function(){draw()}, 10);
+
+var draw = function() {
+	leftArmStart = Math.PI * 5/6;
+	rightArmStart = Math.PI * 1/6;
+	leftLegStart = Math.PI * 4/3;
+	rightLegStart = Math.PI * 5/3;
+	
+	leftArmCurrent = leftArmStart;
+	rightArmCurrent = rightArmStart;
+	leftLegCurrent = leftLegStart;
+	rightLegCurrent = rightLegStart;
+	
+	canvas = document.getElementById("myCanvas");
+	ctx = canvas.getContext("2d");
+	ctx.beginPath();
+	ctx.fillStyle  = "#ff9";
+	ctx.strokeStyle = "#999";
+	ctx.lineWidth = 4;
+	ctx.arc(120,40,25,0,2*Math.PI,false);
+	ctx.stroke();
+	ctx.fill();
+	ctx.closePath();
+	
+	//body
+	ctx.beginPath();
+	ctx.moveTo(120,65);
+	ctx.lineTo(120,165);
+	ctx.stroke();
+	
+	//right leg
+	ctx.beginPath();
+	if (rightLegCurrent > Math.PI * 5/3) { rightLegCurrent = rightLegStart }
+	ctx.rotate(rightLegCurrent);
+	ctx.moveTo(120,165);
+	ctx.lineTo(160,205);
+	ctx.stroke();
+	
+	//left leg
+	ctx.beginPath();
+	ctx.moveTo(120, 165);
+	ctx.lineTo(80,205);
+	ctx.stroke();
+	
+	//left arm
+	ctx.beginPath();
+	ctx.moveTo(120, 105);
+	ctx.lineTo(80,65);
+	ctx.stroke();
+
+	//right arm
+	ctx.beginPath();
+	ctx.moveTo(120, 105);
+	ctx.lineTo(160,65);
+	ctx.stroke();
+	
+	ctx.closePath();
+}
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>
+		Casino
+	</title>
+	<link rel='stylesheet' type='text/css' href='http://code.jquery.com/ui/1.11.4/themes/vader/jquery-ui.css'/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+		integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
+		crossorigin="anonymous">
+	<link href="Styles/casino.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="Styles/casino.css">
+</head>
+
+<body>
+<!---------------------------------------------------------------------------------------------------
+-------------------------------------THIS IS THE TEXT FOR MY DIALOG BOXES----------------------------
+---------------------------------------------------------------------------------------------------->
+<div id="dialog" title="How to play">
+	<h1>Welcome!</h1>
+	<p>How to play:
+	<br />It's simple! You just drag the chips onto the squares you want to bet on!
+	<br />Don't like the bets you've placed? Click the "reset bets"
+	button to erase all your bets and start over!
+	<br /><br />
+	Feel like you're ready? 
+	Click the Roll the Dice button to begin playing!</p>
+	<h2>Have fun!</h2>
+</div>
+<div id="enterBet" title="error">
+	<p>To play the game you have to make a bet!</p>
+	
+	<p>
+		If you're unsure about how to do this, 
+		please click on the rules button in the 
+		top right hand corner.
+	</p>
+	<p>Thank you!</p>
+</div>
+<div id="reset">
+	<h4>Your bets have been reset</h4>
+</div>
+<div id="tooMuch">
+	<p>You cannot bet that much. You don't have enough money left.
+</div>
+<!---------------------------------------------------------------------------------------------------
+----------------------------------------BOOTSTRAP NAV BAR--------------------------------------------
+---------------------------------------------------------------------------------------------------->
+
+<nav id="visible" class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+           	<div class="CasinoLogo">
+				<section class="CasinoName">
+					<button type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" 
+						data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					
+					<div class="collapse navbar-collapse links pull-right" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li><a class="backToMain">Home</a></li>
+							<li><a id="openDialogue">Rules</a></li>
+						</ul>
+					</div>
+					
+					<img src="Images/casinoLogo.jpg" height="7%" width="7%">
+						Casino Black Lotus
+				</section>
+			</div>   
+        </div>
+    </div>
+</nav>
+<!------------------------------------------------------------------------------------------
+---------------------------------------USER DATA--------------------------------------------
+------------------------------------------------------------------------------------------->
+<div id="all">
+<div id="visible" class="UserInfo">
+	<h4 id="playerInfo"><strong>Player Info</strong></h4>
+	<p>
+		<section>
+			<label>Name:&nbsp;</label><span id="name2" name="name"></span>
+		</section>
+	</p>
+	<p>
+		<section>
+			<label>Phone number:&nbsp;</label><span id="phone2" name="phone" value="phone"></span>
+		</section>
+	</p>
+	<p>
+		<section>
+			<label>Postal Code:&nbsp;</label><span id="postal2" name="postal"></span>
+		</section>
+	</p>
+	<p>
+		<section>
+			<label>Money remaining:&nbsp;</label><span id="remain2" name="remain"></span>$
+		</section>
+	</p>
+	<p class="backToMain"><label>Would you like to quit?</label></p>
+</div>
+
+<!--------------------------------------------------------------------------------------------------
+---------------------------DIV WHERE GAMEPLAY AND BETTING HAPPENS-----------------------------------
+--------------------------------------------------------------------------------------------------->
+
+
+	<div id="ProcessingBets">
+		<div id="placingBets">
+
+<!--------------------------------PLACING YOUR BETS------------------------------------------------>		
+
+			<label><img id="diamond" alt="0" class="mat" src="Images/dice/diamondMat.png" width="110%" height="110%" ></label>
+			<label><img id="crown"   alt="1" class="mat" src="Images/dice/crownMat.png"   width="110%" height="110%" ></label>
+			<label><img id="spade"   alt="2" class="mat" src="Images/dice/spadeMat.png"   width="110%" height="110%" ></label>
+			<br />
+			<label><img id="clubs"   alt="3" class="mat" src="Images/dice/clubMat.png"    width="110%" height="110%" ></label>
+			<label><img id="anchor"  alt="4" class="mat" src="Images/dice/anchorMat.png"  width="110%" height="110%" ></label>
+			<label><img id="hearts"  alt="5" class="mat" src="Images/dice/heartMat.png"   width="110%" height="110%" ></label>
+		
+			<br />
+			<div>
+				<img src="./Images/chips/chipBlack.png"  height="90px" width="90px" class="chip" id="5"   alt="0"   title="5"/>
+&nbsp;&nbsp;&nbsp;
+				<img src="./Images/chips/chipBlue.png"   height="90px" width="90px" class="chip" id="10"  alt="1"   title="10"/>
+&nbsp;&nbsp;&nbsp;
+				<img src="./Images/chips/chipGreen.png"  height="90px" width="90px" class="chip" id="25"  alt="2"   title="25"/>
+<br />
+				<img src="./Images/chips/chipOrange.png" height="90px" width="90px" class="chip" id="50"  alt="3"   title="50"/>
+&nbsp;&nbsp;&nbsp;
+				<img src="./Images/chips/chipPurple.png" height="90px" width="90px" class="chip" id="100" alt="4"   title="100"/>
+&nbsp;&nbsp;&nbsp;
+				<img src="./Images/chips/chipRed.png"    height="90px" width="90px" class="chip" id="500" alt="5"   title="500"/>
+&nbsp;&nbsp;&nbsp;
+			</div>
+		</div>	
+		
+		
+		
+<!------------------------------------------------------------------------------------------------------
+----------------------------------ROLLING THE DICE------------------------------------------------------
+------------------------------------------------------------------------------------------------------->
+
+		<div class="diceAnimations">
+			<div id="amount" style="display: none;">
+				<h2>Amount Bet:
+					<div id="amountBet">
+						
+					</div>
+				</h2> 
+			</div>
+		<br /><br />
+			<img src="Images/dice/diamond.png" id="dice1" height="15%" width="15%" />
+			<img src="Images/dice/diamond.png" id="dice2" height="15%" width="15%" />
+			<img src="Images/dice/diamond.png" id="dice3" height="15%" width="15%" />
+			
+			<br /><br />
+			
+			<button type="button" class="btn btn-success" id="rollingTheDice">ROLL THE DICE</button><br />
+			<button type="button" class="btn btn-warning" id="resetBets">Reset bets</button>
+			<div id="rollInfo">
+				<br />Roll1:&nbsp;<label id="firstDiceRoll"></label>
+				<br />Roll2:&nbsp;<label id="secondDiceRoll"></label>
+				<br />Roll3:&nbsp;<label id="thirdDiceRoll"></label>
+				<br /><label id="DidYouWin"></label>
+				
+				<br />Diamonds:&nbsp; <label><label id="betDiamonds"></label></label>
+				<br />Crown:&nbsp; <label><label id="betCrown"></label></label>
+				<br />Spades:&nbsp; <label><label id="betSpades"></label></label>
+				<br />Clubs:&nbsp; <label><label id="betClubs"></label></label>
+				<br />Anchor:&nbsp; <label><label id="betAnchor"></label></label>
+				<br />Hearts:&nbsp; <label><label id="betHearts"></label></label>
+			</div><br /><br />
+			<div id="winning">
+				
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--------------------------------------JAVASCRIPT LINKS-------------------------------------------->
+<script src="https://code.jquery.com/jquery-2.2.3.js">
+</script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js">
+</script>
+<script src="JavaScript/diceRolling.js">
+</script>
+
+
+</body>
+</html>

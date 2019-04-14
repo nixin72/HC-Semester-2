@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Drawing Loop</title>
+  </head>
+<body>
+    <canvas id="myCanvas" width="600" height="300">
+	<!-- OPTION 1: leave a message here if browser doesn't support canvas -->
+    <p>Your browser doesn’t currently support the Canvas. 
+    Please check caniuse.com/#feat=canvas for information on 
+    browser support for canvas.</p>
+
+	<!-- OPTION 2: put fallback content (text, image, Flash, etc.) 
+                 if the browser doesn't support canvas -->
+	</canvas>
+<script>
+	var context;
+	var img;
+	var x = 0;
+	var y = 40;
+	var theStars = [];
+	var balloon = new Array(8);
+	var curBalloon = 0;
+
+	var moveBalloon = function () {
+		(curBalloon == 7) ? curBalloon = 0 : ++curBalloon;
+		img.src = balloon[curBalloon].src;
+	}
+
+
+	var setUp = function() {
+		//set up animated balloon first
+		for (var i=0; i<balloon.length; i++) {
+			balloon[i] = new Image();
+			balloon[i].src = './images/balloon/balloon' + i + ".gif";
+		}
+		//setInterval('moveBalloon()', 200);
+
+		//setup canvas
+        var canvas = document.getElementById('myCanvas');
+        context = canvas.getContext('2d');
+		theStars = getStars();
+		img = new Image();
+		img.addEventListener('load', function(){ setInterval(function () { draw(); }, 50);},false);		
+		img.src = "./images/balloon/balloon0.gif";
+		//img.src= 'images/Animated/balloonMove.gif';
+	}
+
+	var draw = function() {
+		drawBackground();
+		
+	    context.drawImage(img, x, y);	    
+	    x += 2;
+	    if(x > 600){
+               x = -50;
+	       y=Math.random()*200;
+            }
+	}
+
+	var getStars = function() {
+		var numStars = Math.floor((Math.random() * 100)+1);
+		var starArray = new Array(numStars);
+
+		for (var i=0; i<numStars; i++) {
+		
+			var xSpot = Math.floor((Math.random() * 600)+1);
+			var ySpot = Math.floor((Math.random() * 300)+1);
+			var starSize = Math.floor((Math.random() * 3)+1);
+			
+			starArray[i] = {xSpot:xSpot, ySpot:ySpot, starSize:starSize};
+		}
+
+		return starArray;
+		
+	}
+	
+	var drawBackground = function() {
+	    <!-- night sky -->	
+	    var lineGrad = context.createLinearGradient(150, 0, 150, 600);
+	    lineGrad.addColorStop(0, 'black');
+	    lineGrad.addColorStop(1, '#009');
+	    context.fillStyle = lineGrad;
+	    context.fillRect(0, 0, 600, 300);
+
+	    context.fillStyle = 'white';
+		for (var i=0; i<theStars.length; i++) {
+			context.beginPath();
+            context.arc(theStars[i].xSpot, theStars[i].ySpot, theStars[i].starSize, 0, Math.PI*2, false);
+            context.fill();
+		}
+	}
+	
+	addEventListener('load', setUp, false);
+</script>
+</body>
+</html>

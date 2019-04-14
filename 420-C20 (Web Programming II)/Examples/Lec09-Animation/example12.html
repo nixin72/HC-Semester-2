@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Canvas Details</title>
+<style type="text/css">
+canvas {
+	border: thin solid black;
+}
+</style>
+
+</head>
+
+<body>
+<canvas id="myCanvas" width="500" height="250">
+<!-- OPTION 1: leave a message here if browser doesn't support canvas -->
+    <p>Your browser doesn’t currently support the Canvas. 
+    Please check caniuse.com/#feat=canvas for information on 
+    browser support for canvas.</p>
+
+  <!-- OPTION 2: put fallback content (text, image, Flash, etc.) 
+                 if the browser doesn't support canvas -->
+</canvas>
+<script>
+
+var elCanvas = document.getElementById('myCanvas');
+var context = elCanvas.getContext('2d');
+
+context.beginPath();
+context.moveTo(50,50);
+context.lineTo(200,150);
+context.lineTo(400,50);
+context.stroke();
+
+//context.closePath();
+//context.fillStyle="Maroon";
+//context.strokeStyle="LimeGreen";
+//context.lineWidth = 10;
+//context.fill();
+
+//context.beginPath();
+//context.arc(300,175,50,0,2*Math.PI);
+//context.stroke();
+
+//context.beginPath();
+//context.moveTo(150,50);
+//context.bezierCurveTo(280, 30, 350, 180, 400, 100);
+//context.strokeStyle = "DarkMagenta";
+//context.lineWidth=5;
+//context.stroke();
+
+//context.beginPath();
+//context.arc(300, 160, 3, 0, 2*Math.PI);
+//context.fillStyle="Black";
+//context.fill();
+//context.stroke();
+
+//context.beginPath();
+//context.arc(300,175,30,Math.PI/6, 11/6*Math.PI);
+//context.lineTo(300, 175);
+//context.closePath();
+//context.fillStyle="Yellow";
+//context.fill();
+//context.stroke();
+
+</script>
+
+</body>
+</html>
+

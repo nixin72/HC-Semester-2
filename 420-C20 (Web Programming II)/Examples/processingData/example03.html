@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Regular Expressions</title>
+<script>
+
+</script>
+</head>
+
+<body>
+
+<form name="MyForm">
+ <input type="text" name="entry" id="entry" size="15" />
+ <input type="button" name="btnMy" value="Check" id="btnMy" />
+</form>
+
+<script>
+var $ = function(id) { return document.getElementById(id); }
+
+var checkPhone = function() {
+
+phoneNum = $("entry").value;
+//var reDigit = /...../
+//var reDigit = /^\d{7}$/;
+//var reDigit = /^\d{3}\-\d{4}$/;
+var reDigit = /^(1 )?(\(\d{3}\) )?(\d{3})(\-\d{4})$/;
+
+console.log("Searching the string for regular expression: " , phoneNum.search(reDigit));
+console.log("Checking the regular expression against the string: "+ reDigit.test(phoneNum));
+
+}
+
+//var urlP = /http/;
+//var urlP = /^http/;
+var urlP = /\.(com|gov|med)$/;
+
+var url = "http://www.youmadbro.ca";
+
+console.log(url.search(urlP) + " " + urlP.test(url));
+
+$("btnMy").addEventListener('click', checkPhone, false);
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+  <head>
+    <title>Display Received Information</title>
+  </head>
+
+<body>
+
+  <h2>Received Data</h2>
+  
+<script>
+	var queryStr = location.search;
+	console.log("Query String: " , queryStr);
+	
+	//Remove first character to remove question mark
+	queryStr = queryStr.substring(1,queryStr.length);
+	console.log("Remove ?: ", queryStr);
+	
+	while (queryStr.indexOf("+") != -1) {
+		queryStr = queryStr.replace("+", " ");
+	}
+	console.log("Change + to space: ",queryStr);
+	
+	//Split into an array at each & as that is what is between fields
+	var queryArray = queryStr.split("&");
+	console.log(queryArray);
+
+//	queryStr = unescape(queryStr);
+//	console.log("HTML special characters to regular: ", queryStr);
+	
+//key=data is the format of each array element. 
+//Need to split at equal sign
+//Create an associative array/object from the values
+	var values = [];
+	for (var i = 0; i<queryArray.length; i++) {
+		var equalPos = queryArray[i].search("=") ;
+		var keyVal = queryArray[i].substring(0,equalPos);
+		var dataVal = queryArray[i].substring(equalPos+1);
+		var dataVal = unescape(dataVal);
+		console.log("Key:",keyVal,"Data:", dataVal);
+		values[keyVal] = dataVal;
+	}
+	
+	console.log(values);
+	for (i in values) {
+		console.log("Key: ",i," has value: ", values[i]);
+	}
+</script>
+
+</body>
+
+</html>

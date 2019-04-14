@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+  <head>
+    <title>Changing Images</title>
+  </head>
+
+<body>
+
+  <h2>A Changing Image</h2>
+	 <img src="images/blackDice_blue1.png" width="95" height="95" alt="die 1" id="imgDie1" /><br/>
+	 <button type="button" id="btn1">Roll Die</button>
+
+  <script>
+  
+  	var btnEl = document.getElementById("btn1");
+	var imgDie1 = document.getElementById("imgDie1");
+	
+	var changeDie = function() {
+		var imgDie = document.getElementById("imgDie1");
+		imgDie.src = "images/blackDice_green2.png";
+	}
+	
+	var quickChange = function() {
+		var imgDie = document.getElementById("imgDie1");
+		imgDie.src = "images/blackDice_red3.png";
+	}
+	
+	var changeBack = function() {
+		var imgDie = document.getElementById("imgDie1");
+		imgDie.src = "images/blackDice_blue1.png";
+	}
+
+	var downChange = function() {
+		var imgDie = document.getElementById("imgDie1");
+		imgDie.src = "images/blackDice_white4.png";
+	}
+
+	var upChange = function() {
+		var imgDie = document.getElementById("imgDie1");
+		imgDie.src = "images/goldDice_blue5.png";
+	}
+
+	btnEl.addEventListener('click',  changeDie,  false);
+	imgDie1.addEventListener('mouseover', quickChange, false);
+	imgDie1.addEventListener('mouseout', changeBack, false);
+	imgDie1.addEventListener('mousedown', downChange, false);
+	imgDie1.addEventListener('mouseup', upChange, false);
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+  <head>
+    <title>Getting Form Information</title>
+  </head>
+
+<body>
+
+  <h2>A Form to Nowhere</h2>
+  
+  <form id="myForm" action="processData.html" method="get">
+	<label for="username">Username: </label>
+	<input type="text" id="username" name="theUsername" placeholder="Username" /><br/><br/>
+	<label for="emailAddr">Email: </label>
+	<input type="text" id="emailAddr" name="theEmailAddr"" placeholder="Email" size="35" /><br/><br/>
+	<label for="phone">Phone number: </label>
+	<input type="text" id="phone" name="thePhone" placeholder="(###) ###-####" /><br/><br/>
+	<input type="submit" id="btnSub" value="Go"/>
+	
+  </form>
+  
+  <script>
+
+	var validateForm = function() {
+		var elUName = document.getElementById("username");
+		elUName.style.border = "thin outset blue";
+		return true;
+	}
+  
+	var el=document.getElementById("myForm");
+	el.onsubmit = validateForm;
+//	el.addEventListener('submit', validateForm, false);
+	
+	
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+

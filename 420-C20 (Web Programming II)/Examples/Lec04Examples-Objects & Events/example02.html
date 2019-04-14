@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+  <head>
+    <title>Objects</title>
+  </head>
+
+<body>
+
+  <h2>Objects with literal notation</h2>
+
+  <script>
+
+	var hotel = new Object();
+	hotel.name="Westin";
+	hotel.rooms=150;
+	hotel.booked=53;
+	hotel.checkAvailability = function() {
+			return this.rooms - this.booked;
+	};
+
+	console.log(hotel);
+	console.log(hotel.rooms);
+	console.log(hotel.checkAvailability());
+	//	console.log(hotel['rooms']);
+
+	hotel.name = 'Chateau';
+	console.log(hotel.name);
+	console.log(hotel);
+	
+</script>
+
+</body>
+
+</html>

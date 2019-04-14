@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Home</title>
+	
+<link rel="stylesheet" type="text/css" href="Styles/casino.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
+crossorigin="anonymous">
+<link href="Styles/casino.css" rel="stylesheet" type="text/css">	
+</head>
+
+<body>
+
+<!---------------------------------------------------------------------------------------------------
+----------------------------------------BOOTSTRAP NAV BAR--------------------------------------------
+---------------------------------------------------------------------------------------------------->
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+           	<div class="CasinoLogo">
+				<section class="CasinoName">
+					<button type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" 
+						data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					
+					<div class="collapse navbar-collapse links pull-right" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="rules.html">Rules</a></li>
+						</ul>
+					</div>
+					
+					<img src="Images/casinoLogo.jpg" height="7%" width="7%">
+						Casino Black Lotus
+				</section>
+			</div>   
+        </div>
+    </div>
+</nav>
+
+<!---------------------------------------------------------------------------------------------------
+--------------------------------------------USER INPUT-----------------------------------------------
+---------------------------------------------------------------------------------------------------->
+<div class="UserInput" id="userInput">
+<div id="playerReturn">
+<table>
+
+<form method="get" action="game.html" ><!---->
+	<table class="centerToPage">
+		<tr>
+			<td class="rightFloat"><label><br />First Name:&nbsp;&nbsp;</label></td>
+			<td><input class="form-control" type="text" name="name" id="fname1" placeholder="First Name" /></td>
+				<section class="errorInFirst"></section>
+		</tr>
+		<tr>
+			<td class="rightFloat"><label><br />Last Name:&nbsp;&nbsp;</label></td>
+			<td><input class="form-control" type="text" name="name" id="lname1" placeholder="Last Name" /></td>
+				<section class="errorInLast"></section>
+		</tr>
+		<tr>
+			<td class="rightFloat"><label><br />Phone number:&nbsp;&nbsp;</label></td>	
+			<td><input class="form-control" type="text" name="phoneNum" id="phone1" placeholder="(123) 456-7890" /></td>
+				<section class="errorInEmail"></section>
+		</tr>
+		<tr>
+			<td class="rightFloat"><label><br />Postal Code:&nbsp;&nbsp;</label></td>
+			<td><input class="form-control" type="text" name="postal" id="postal1" placeholder="Postal Code" /></td>
+				<section class="errorInPostal"></section>
+		</tr>
+		<tr>
+			<td></td>
+			<td colspan="2" class="centerToPage"><label>How much money would you like?</label></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td colspan="2" class="centerToPage">
+			<input class="form-control" type="text" id="money1" name="starting" placeholder="Max: 5000$">
+				<section class="errorInMoney"></section>
+		</tr>
+		<tr>
+			<td></td>
+			<td><strong><section id="message"></section></strong></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><br />
+			<input class="btn" type="submit" name="start" id="startPlaying" value="Start Playing!" /></td>
+		</tr>
+	</table>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+</form>
+</table>	
+</div>
+<div id="GoToGame">
+</div>
+<div id="returnToIntro">
+</div>
+<a href="index.html" id="linkBack"></a>
+</div>
+
+<!--------------------------------------JAVASCRIPT LINKS-------------------------------------------->
+<script src="JavaScript/input.js">
+</script>
+<script src="JavaScript/onLoad.js">
+</script>
+
+</body>
+</html>

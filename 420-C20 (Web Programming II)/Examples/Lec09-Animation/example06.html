@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<title>Butterfly</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+	img {
+		left: -150px;
+		top: 250px;
+		position: absolute;
+	}
+</style>
+</head>
+<body>
+ <p><img src="./images/butterfly.gif" id="butterfly" alt="Image of a butterfly" height="120" width="150" /></p>
+<h1>Butterfly</h1>
+<p>According to Wikipedia:</p>
+<blockquote><p>A butterfly is an insect of the order Lepidoptera, it belongs to either the Hesperioidea (the skippers) or Papilionoidea (all other butterflies) Superfamilies. Some authors have also suggested the inclusion of the superfamily Hedyloidea, the American butterfly moths. They are notable for their unusual life cycle with a larval caterpillar stage, an inactive pupal stage and a spectacular metamorphosis into a familiar and colourful winged adult form. The diverse patterns formed by their brightly coloured wings and their erratic-yet-graceful flight have made butterfly watching a popular hobby.</p></blockquote>
+
+<script>
+var topPosition = 250;
+var leftPosition = -150;
+var flyButterfly = function() {
+	var butterfly = document.getElementById("butterfly");
+	butterfly.style.left = leftPosition + "px";
+	butterfly.style.top = topPosition + "px";
+//	butterfly.style.visibility = "visible";
+	topPosition -= 3;
+	leftPosition += 10;
+	if (topPosition <= 50) {
+		topPosition = 250;
+		leftPosition = -150;
+	}
+}
+
+function doSetUp() {
+	setInterval('flyButterfly()', 100);
+}
+
+addEventListener('load',doSetUp,false);
+
+</script>
+
+
+</body>
+</html>

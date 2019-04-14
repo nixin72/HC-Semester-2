@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Animations</title>
+<style type="text/css">
+	@keyframes exDiv1 {
+		from {
+			width: 50px;
+			background-color: DarkKhaki;
+		}
+		to {
+			width: 300px;
+			background-color: DarkSeaGreen;
+		}
+	}
+	#div1 {
+		background-color: lightblue;
+		width: 100px;
+		height: 60px;
+		border: 1px solid black;
+		margin: 10px;
+		animation-name: exDiv1;
+		animation-duration: 3s;
+		animation-delay: 2s;
+		animation-iteration-count: 4;
+		animation-direction: reverse;
+	}
+	#div2 {
+		background-color: Crimson;
+		width: 60px;
+		height: 60px;
+		border: 1px solid black;
+		margin: 10px;
+		float: left;
+	}
+	#div3 {
+		background-color: lightgreen;
+		position: relative;
+		left: 0px;
+		width: 60px;
+		height: 60px;
+		border: 1px solid black;
+		margin: 10px;
+		float: left;
+		text-align:center;
+		vertical-align: middle;
+		transition: 1s linear;
+	}
+	#div2:hover + #div3 {
+		transform: rotate(360deg);
+		left: calc(100% - 160px);
+		background-color: DarkViolet;
+		border-radius: 50%;
+	}
+</style>
+
+
+</head>
+
+<body>
+<div id="div1"><p>Div 1</p></div>
+<div id="div2"><p>Div 2</p></div>
+<div id="div3"><p>Div 3</p></div>
+
+</body>
+</html>

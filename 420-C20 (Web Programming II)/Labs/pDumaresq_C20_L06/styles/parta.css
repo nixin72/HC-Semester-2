@@ -1,0 +1,16 @@
+body {
+	font-family: Verdana, Georgia, sans-serif;
+}
+#theLeft {
+	float: left;
+	margin-right: 3em;
+	border: thin inset blue;
+	width: 32em;
+	padding-left: 1em;
+}
+#theRight {
+	float: left;
+	border: thin inset green;
+	width: 32em;
+	padding-left: 1em;
+}
